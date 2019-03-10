@@ -1,0 +1,46 @@
+{
+	"users": [
+		{
+			"name": "user 1",
+			"id": "1",
+			"roleId": "2",
+			"articaleId": "1"
+		}
+	],
+	"articales": [
+		{
+			"id": 1,
+			"userId": "1",
+			"data": "article 1"
+		},
+		{
+			"id": 2,
+			"userId": "1",
+			"data": "article 2"
+		}
+	],
+	"roles": [
+		{
+			"name": "admin",
+			"id": 1
+		},
+		{
+			"name": "user",
+			"id": 2
+		},
+		{
+			"name": "guest",
+			"id": 3
+		}
+	],
+	"permissions": [
+		{
+			"role": "user",
+			"method": "post",
+			"table": "/users/:userId/articles",
+			"roleId": 2,
+			"where": "function (params, user) {\n                  return user.id === params.userId;\n                }",
+			"id": 1
+		}
+	]
+}
